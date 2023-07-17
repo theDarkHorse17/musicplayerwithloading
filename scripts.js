@@ -25,23 +25,38 @@ const songs=[
     artist:"Kazuso Oda",
     bground:"bg3"
 },
+{
+    name:"swag4",
+    title:"Shape of you",
+    artist:"Ed Sheeran",
+    bground:"bg4"
+},
+{
+    name:"swag5",
+    title:"Sunflower",
+    artist:"Post Malone",
+    bground:"bg5"
+}
 ]
-isPlaying=false;
+isPlaying=true;
+// isPlaying=false;
 
 const playMusic = () => {
     isPlaying=true;
     music.play();
     play.classList.replace("fa-play", "fa-pause");
     img.classList.add("anime");
-    img.classList.add("visualizer");
+    img.classList.add("rotpla");
 };
 const pauseMusic = () => {
     isPlaying=false;
     music.pause();
     play.classList.replace("fa-pause","fa-play");
     img.classList.remove("anime");
-    img.classList.remove("visualizer");
+    img.classList.remove("rotpla");
 };
+
+// isPlaying? playMusic():pauseMusic();
 play.addEventListener("click",() => {
     if(isPlaying){
     pauseMusic();  
@@ -64,7 +79,7 @@ play.addEventListener("click",() => {
     if(isPlaying){
         play.classList.replace("fa-pause","fa-play");
         img.classList.remove("anime");
-        img.classList.remove("visualizer");
+        img.classList.remove("rotpla");
     }
     }
     const prevSong=()=>{
@@ -73,11 +88,19 @@ play.addEventListener("click",() => {
     if(isPlaying){
         play.classList.replace("fa-pause","fa-play");
         img.classList.remove("anime");
-        img.classList.remove("visualizer");
+        img.classList.remove("rotpla");
     
     }
     }
     next.addEventListener("click",nextSong);
     prev.addEventListener("click",prevSong);
+
+
+setTimeout(()=> {
+    document.getElementsByClassName('loading-page')[0].classList.remove('loading-page');
+}, 3500);
+
+console.log("Dibyendu");
+
 
     
