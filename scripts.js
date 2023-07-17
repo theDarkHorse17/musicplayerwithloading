@@ -45,21 +45,19 @@ const playMusic = () => {
     music.play();
     play.classList.replace("fa-play", "fa-pause");
     img.classList.add("anime");
-    img.classList.add("rotpla");
 };
 const pauseMusic = () => {
     isPlaying=false;
     music.pause();
     play.classList.replace("fa-pause","fa-play");
     img.classList.remove("anime");
-    img.classList.remove("rotpla");
 };
 
 play.addEventListener("click",() => {
-    if(isPlaying){
-    pauseMusic();  
-    }else{
-    playMusic();
+    if (isPlaying) {
+    pauseMusic();
+    } else{
+        playMusic();
     }
 });
 ///music change
