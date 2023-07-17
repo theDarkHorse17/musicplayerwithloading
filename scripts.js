@@ -39,7 +39,6 @@ const songs=[
 }
 ]
 isPlaying=true;
-// isPlaying=false;
 
 const playMusic = () => {
     isPlaying=true;
@@ -56,7 +55,6 @@ const pauseMusic = () => {
     img.classList.remove("rotpla");
 };
 
-// isPlaying? playMusic():pauseMusic();
 play.addEventListener("click",() => {
     if(isPlaying){
     pauseMusic();  
@@ -72,15 +70,10 @@ play.addEventListener("click",() => {
         img.src= "image/" +songs.name+".jpg";
         document.body.style.backgroundImage = `url("image/${songs.bground}.gif")`;
     };
-    songIndex =0;
+    songIndex =0; 
     const nextSong=()=>{
     songIndex=(songIndex+1)%songs.length;
     loadMusic(songs[songIndex]);
-    if(isPlaying){
-        play.classList.replace("fa-pause","fa-play");
-        img.classList.remove("anime");
-        img.classList.remove("rotpla");
-    }
     }
     const prevSong=()=>{
     songIndex=(songIndex-1+songs.length)%songs.length;
@@ -89,7 +82,6 @@ play.addEventListener("click",() => {
         play.classList.replace("fa-pause","fa-play");
         img.classList.remove("anime");
         img.classList.remove("rotpla");
-    
     }
     }
     next.addEventListener("click",nextSong);
@@ -98,9 +90,9 @@ play.addEventListener("click",() => {
 
 setTimeout(()=> {
     document.getElementsByClassName('loading-page')[0].classList.remove('loading-page');
+    document.body.style.backgroundImage = `url("image/bg1.gif")`;
+    isPlaying? pauseMusic():playMusic();
 }, 3500);
-
-console.log("Dibyendu");
 
 
     
