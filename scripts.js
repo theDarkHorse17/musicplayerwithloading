@@ -38,11 +38,11 @@ const songs=[
     bground:"bg5"
 }
 ]
-isPlaying=true;
+isPlaying=false;
 
 const playMusic = () => {
     isPlaying=true;
-    music.play();
+    if (isPlaying) music.play();
     play.classList.replace("fa-play", "fa-pause");
     img.classList.add("anime");
 };
@@ -72,6 +72,8 @@ play.addEventListener("click",() => {
     const nextSong=()=>{
     songIndex=(songIndex+1)%songs.length;
     loadMusic(songs[songIndex]);
+    if(isPlaying) music.play();
+    
     }
     const prevSong=()=>{
     songIndex=(songIndex-1+songs.length)%songs.length;
@@ -80,6 +82,10 @@ play.addEventListener("click",() => {
         play.classList.replace("fa-pause","fa-play");
         img.classList.remove("anime");
         img.classList.remove("rotpla");
+        if(isPlaying) {
+            music.play();
+            playMusic();
+        }
     }
     }
     next.addEventListener("click",nextSong);

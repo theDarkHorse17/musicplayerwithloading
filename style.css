@@ -44,7 +44,7 @@ html{
 #artist{
     letter-spacing: .2rem;
     word-spacing: 0.5rem;
-    color:black; 
+    color:rgb(234, 203, 203); 
     text-shadow: 0 .3rem .5rem rgb(0, 0, 0,0.3) ;
     font-size: 1.5rem;
     margin-bottom: 4rem;
@@ -120,4 +120,4 @@ img{
         transform: rotate(360deg);
     }
 }
-  
+
