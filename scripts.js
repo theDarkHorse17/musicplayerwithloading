@@ -38,7 +38,7 @@ const songs=[
     bground:"bg5"
 }
 ]
-isPlaying=false;
+isPlaying=true;
 
 const playMusic = () => {
     isPlaying=true;
@@ -98,5 +98,3 @@ setTimeout(()=> {
     isPlaying? pauseMusic():playMusic();
 }, 3500);
 
-
-    

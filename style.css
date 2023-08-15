@@ -121,3 +121,11 @@ img{
     }
 }
 
+
+@media (max-width: 1200px) {
+    #music{
+        align-items: center;
+        scale:0.85;
+    }
+    }
+    
